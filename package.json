@@ -1,0 +1,19 @@
+{
+  "name": "portal_noticias",
+  "version": "1.0.0",
+  "description": "Site de Noticias",
+  "main": "noticias.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ale182/cursoNodejs.git"
+  },
+  "author": "AlphaBeth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ale182/cursoNodejs/issues"
+  },
+  "homepage": "https://github.com/ale182/cursoNodejs#readme"
+}
