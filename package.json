@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ale182/cursoNodejs/issues"
   },
-  "homepage": "https://github.com/ale182/cursoNodejs#readme"
+  "homepage": "https://github.com/ale182/cursoNodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
