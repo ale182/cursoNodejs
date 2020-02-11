@@ -8,6 +8,22 @@ var app = express();
 // processar essa requisicao e responder um HTML
 app.set('view engine','ejs');
 
+
+app.get('/' , function(req , res){
+    res.render("home/index");    
+});
+
+app.get('/formulario_inclusao_noticia' , function(req , res){
+    res.render("admin/form_add_noticia");    
+});
+
+app.get('/noticias' , function(req , res){
+    res.render("noticias/noticias");    
+});
+
+// ** ANTIGO -- ANTES de baixar views.zip 
+/*
+
 // usando o EJS para trazer o HTML da pagina
 app.get('/tecnologia' , function(req , res){
     res.render("secao/tecnologia");    
@@ -18,6 +34,7 @@ app.get('/tecnologia' , function(req , res){
 app.get('/' , function(req , res){
     res.send("<html><body>Portal de Noticias</body></html>");    
 });
+*/
 
 // tratando a chamada do /tecnologia
 // ** ANTIGO , antes de usar o EJS 
