@@ -12,4 +12,7 @@ var app = express();
 // processar essa requisicao e responder um HTML
 app.set('view engine','ejs');
 
+// setar o caminho de views padrao
+app.set('views','./app/views');
+
 module.exports = app;

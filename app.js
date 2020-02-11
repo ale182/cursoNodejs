@@ -1,7 +1,17 @@
 // incluindo arquivo de configuracao, contendo os modulos e logicas necessarias
 var app = require('./config/server') ;
 
+// criando a variavel e chamando depois (passando o app como parametro)
+// var rotaHome = require('./app/routes/home') ;
+// rotaHome(app) ; 
 
+// outra forma, criando a variavel e ja executando a funcao na criacao
+var rotaHome = require('./app/routes/home')(app) ; 
+var rotaNoticias = require('./app/routes/noticias')(app) ; 
+var rotaFormInclusao = require('./app/routes/formulario_inclusao_noticia') (app) ; 
+
+// ** ANTIGO , antes de configurar como Rotas
+/*
 app.get('/' , function(req , res){
     res.render("home/index");    
 });
@@ -13,6 +23,7 @@ app.get('/formulario_inclusao_noticia' , function(req , res){
 app.get('/noticias' , function(req , res){
     res.render("noticias/noticias");    
 });
+*/
 
 // ** ANTIGO -- ANTES de baixar views.zip 
 /*
