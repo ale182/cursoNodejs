@@ -1,5 +1,8 @@
 var express = require('express');
 
+// carregando o modulo 'customizado' de testes
+var msg = require('./mod_teste') ;
+
 // execucao da funcao contida no express 
 var app = express();
 
@@ -46,5 +49,11 @@ app.get('/' , function(req , res){
                 // funcao de callback
 app.listen(3000, function(){
     console.log("Servidor rodando com Express");
+
+    // Primeira forma de fazer (sem funcao)
+    // console.log(msg);
+
+    // usando exports e uma funcao que retorna valor
+    console.log(msg());
 
 });
