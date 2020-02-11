@@ -1,15 +1,5 @@
-var express = require('express');
-
-// carregando o modulo 'customizado' de testes
-var msg = require('./mod_teste') ;
-
-// execucao da funcao contida no express 
-var app = express();
-
-// utilizando o 'engine' de views do ejs
-// as views serao os arquivos HTML a engine do ejs vai 
-// processar essa requisicao e responder um HTML
-app.set('view engine','ejs');
+// incluindo arquivo de configuracao, contendo os modulos e logicas necessarias
+var app = require('./config/server') ;
 
 
 app.get('/' , function(req , res){
@@ -54,6 +44,6 @@ app.listen(3000, function(){
     // console.log(msg);
 
     // usando exports e uma funcao que retorna valor
-    console.log(msg());
+    //console.log(msg());
 
 });
