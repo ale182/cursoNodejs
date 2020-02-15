@@ -5,6 +5,8 @@ var app = require('./config/server') ;
 // var rotaHome = require('./app/routes/home') ;
 // rotaHome(app) ; 
 
+/* ANTIGO, antes de usar CONSIGN 
+
 // outra forma, criando a variavel e ja executando a funcao na criacao
 var rotaHome = require('./app/routes/home')(app) ; 
 var rotaNoticias = require('./app/routes/noticias')(app) ; 
@@ -23,7 +25,10 @@ app.get('/formulario_inclusao_noticia' , function(req , res){
 app.get('/noticias' , function(req , res){
     res.render("noticias/noticias");    
 });
+
 */
+
+
 
 // ** ANTIGO -- ANTES de baixar views.zip 
 /*
