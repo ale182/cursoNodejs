@@ -4,9 +4,11 @@ module.exports = function(application){
 
         var connection = application.config.dbConnection();
         // acessa o modulo 
-        var noticiasModel = application.app.models.noticiasModel ;
+        //var noticiasModel = application.app.models.noticiasModel ;
+        // após mudar para Classe , usando o NEW para criar uma instancia do modulo/objeto
+        var noticiasModel = new application.app.models.NoticiasDAO(connection) ;
 
-        noticiasModel.getNoticias(connection , function(error,result){
+        noticiasModel.getNoticias(function(error,result){
             res.render("noticias/noticias" , {noticias : result});  
 
         });
