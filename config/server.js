@@ -21,8 +21,11 @@ app.set('views','./app/views');
 
 // inclui o diretorio das views para carregar automaticamente e fazer
 // os 'requires' de forma automatica
-                         // inclui dentro do 'servidor'
-consign().include('app/routes').into(app);
+                         
+consign()
+    .include('app/routes') // inclui as rotas dentro do 'servidor'
+    .then('config/dbConnection.js') // inclui o carregamento do dbConnection ao carregar as rotas
+    .into(app);
 
 
 module.exports = app;
