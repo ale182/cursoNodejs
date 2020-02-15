@@ -25,6 +25,7 @@ app.set('views','./app/views');
 consign()
     .include('app/routes') // inclui as rotas dentro do 'servidor'
     .then('config/dbConnection.js') // inclui o carregamento do dbConnection ao carregar as rotas
+    .then('app/models') //inclusao de todos os models (tabelas) criados no autoload da aplicacao
     .into(app);
 
 

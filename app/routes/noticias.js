@@ -1,5 +1,21 @@
-module.exports = function(app){
+module.exports = function(application){
 
+    application.get('/noticias' , function(req , res){
+
+        var connection = application.config.dbConnection();
+        // acessa o modulo 
+        var noticiasModel = application.app.models.noticiasModel ;
+
+        noticiasModel.getNoticias(connection , function(error,result){
+            res.render("noticias/noticias" , {noticias : result});  
+
+        });
+
+    });
+
+};
+
+    /* ANTIGO , antes de usar os models
     app.get('/noticias' , function(req , res){
 
         var connection = app.config.dbConnection();
@@ -11,7 +27,7 @@ module.exports = function(app){
             });
  
         });
-
+        */
     /* ANTIGO - alterando para nao dar o require do dbConnection todas as vezes
     var connection = dbConnection();
 
@@ -24,5 +40,5 @@ module.exports = function(app){
             });
  
         });
+    
     */
-    };
