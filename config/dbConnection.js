@@ -3,7 +3,7 @@ var mysql = require('mysql') ;
 var connMySQL = function(){
     console.log('Conexao BD')
     return mysql.createConnection({
-        host     : '192.168.200.110' ,//'vmDEV1' ,
+        host     : '192.168.200.51' ,//'vmDEV1' ,
         user     : 'root' ,
         password : '123456',
         database : 'portal_noticias'

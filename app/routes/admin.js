@@ -1,7 +1,6 @@
 module.exports = function(application){
     application.get('/formulario_inclusao_noticia' , function(req , res){
-        console.log('chama /form_add_noticia');
-        res.render("admin/form_add_noticia" );    
+        res.render("admin/form_add_noticia" , {validacao : {}, noticia : {}});
     });
 
 
@@ -21,8 +20,10 @@ module.exports = function(application){
 
         var erros = req.validationErrors();
 
+        console.log(erros);
+
         if (erros){
-            res.render("admin/form_add_noticia" , {validacao : erros });    
+            res.render("admin/form_add_noticia" , {validacao : erros , noticia : noticia});    
             console.log('vai fazer o return');
             // se ocorreu algum erro, da o return vazio para nao continuar o processo
             return;
