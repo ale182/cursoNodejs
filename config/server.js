@@ -20,6 +20,9 @@ app.set('view engine','ejs');
 // setar o caminho de views padrao, conceito MVC
 app.set('views','./app/views');
 
+// incluindo os arquivos 'estaticos' (imagens, jquery, etc)
+app.use(express.static('./app/public'));
+
 //implementando o bodyparser , { implementa atraves de json as urls codificadas }
 app.use(bodyParser.urlencoded({extended:true}));
 
