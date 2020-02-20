@@ -1,6 +1,7 @@
 var express = require('express');
 var consign = require('consign');
 var bodyParser = require('body-parser');
+var expressValidator = require('express-validator');
 
 
 
@@ -21,6 +22,9 @@ app.set('views','./app/views');
 
 //implementando o bodyparser , { implementa atraves de json as urls codificadas }
 app.use(bodyParser.urlencoded({extended:true}));
+
+// incluindo uso do Express Validator
+app.use(expressValidator());
 
 // inclui o diretorio das views para carregar automaticamente e fazer
 // os 'requires' de forma automatica
