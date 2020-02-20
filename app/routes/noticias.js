@@ -1,21 +1,16 @@
 module.exports = function(application){
 
     application.get('/noticias' , function(req , res){
-
-        var connection = application.config.dbConnection();
-        // acessa o modulo 
-        //var noticiasModel = application.app.models.noticiasModel ;
-        // após mudar para Classe , usando o NEW para criar uma instancia do modulo/objeto
-        var noticiasModel = new application.app.models.NoticiasDAO(connection) ;
-
-        noticiasModel.getNoticias(function(error,result){
-            res.render("noticias/noticias" , {noticias : result});  
-
-        });
+        application.app.controllers.noticias.noticias(application,req,res);
+    
 
     });
 
-};
+    // eliminando o arquivo noticia.js
+    application.get('/noticia' , function(req , res){
+        application.app.controllers.noticias.noticia(application,req,res);
+    });
+};    
 
     /* ANTIGO , antes de usar os models
     app.get('/noticias' , function(req , res){

@@ -17,7 +17,7 @@ var app = express();
 // processar essa requisicao e responder um HTML
 app.set('view engine','ejs');
 
-// setar o caminho de views padrao
+// setar o caminho de views padrao, conceito MVC
 app.set('views','./app/views');
 
 //implementando o bodyparser , { implementa atraves de json as urls codificadas }
@@ -31,7 +31,8 @@ app.use(expressValidator());
 consign()
     .include('app/routes') // inclui as rotas dentro do 'servidor'
     .then('config/dbConnection.js') // inclui o carregamento do dbConnection ao carregar as rotas
-    .then('app/models') //inclusao de todos os models (tabelas) criados no autoload da aplicacao
+    .then('app/models') //inclusao de todos os models (tabelas) criados no autoload da aplicacao , conceito MVC
+    .then('app/controllers') //inclusao dos controllers na aplicacao , conceito MVC
     .into(app);
 
 
