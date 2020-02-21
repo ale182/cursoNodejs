@@ -7,11 +7,11 @@ function NoticiasDAO(connection){
 
 // criando funcoes da Classe
 NoticiasDAO.prototype.getNoticias = function(callback){
-    this._connection.query('select * from noticias',callback);
+    this._connection.query('select * from noticias order by data_criacao desc',callback);
 };
 
 NoticiasDAO.prototype.getNoticiaId = function( callback){
-    this._connection.query('select * from noticias where id_noticia = 3',callback);
+    this._connection.query('select * from noticias where id_noticia = 17',callback);
 };
 
 NoticiasDAO.prototype.salvarNoticia = function(noticia,callback){
